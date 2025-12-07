@@ -10,6 +10,7 @@ export interface Project {
   imageUrl: string;
   githubUrl?: string;
   liveUrl?: string;
+  inProgress?: boolean;
 }
 
 interface ProjectCardProps {
@@ -24,9 +25,18 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     <>
       <div
         onClick={() => setIsOpen(true)}
-        className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transform hover:scale-105 hover:shadow-2xl transition-all duration-300 group"
+        className={`bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer transform hover:scale-105 hover:shadow-2xl transition-all duration-300 group relative ${
+          project.inProgress ? 'border-2 border-amber-400 ring-2 ring-amber-200' : ''
+        }`}
       >
-        <div className="relative h-40 sm:h-48 bg-gradient-to-br from-blue-400 to-purple-500 overflow-hidden">
+        {project.inProgress && (
+          <div className="absolute top-3 right-3 z-20 bg-amber-500 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold shadow-lg animate-pulse">
+            {t('projectInProgress')}
+          </div>
+        )}
+        <div className={`relative h-40 sm:h-48 bg-gradient-to-br from-blue-400 to-purple-500 overflow-hidden ${
+          project.inProgress ? 'opacity-90' : ''
+        }`}>
           {project.imageUrl ? (
             <>
               <img
@@ -34,7 +44,11 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 alt={project.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
-              <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300"></div>
+              <div className={`absolute inset-0 transition-colors duration-300 ${
+                project.inProgress 
+                  ? 'bg-gradient-to-br from-amber-500/20 to-orange-500/20 group-hover:from-amber-500/30 group-hover:to-orange-500/30' 
+                  : 'bg-black/10 group-hover:bg-black/20'
+              }`}></div>
             </>
           ) : (
             <>
@@ -110,7 +124,14 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
               </button>
             </div>
             <div className="p-4 sm:p-6 lg:p-8">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-gray-800">{project.title}</h2>
+              <div className="flex items-center gap-3 mb-3 sm:mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">{project.title}</h2>
+                {project.inProgress && (
+                  <span className="bg-amber-500 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-semibold">
+                    {t('projectInProgress')}
+                  </span>
+                )}
+              </div>
               <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 {project.longDescription}
               </p>

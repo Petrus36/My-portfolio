@@ -17,10 +17,10 @@ const translations = {
     navAbout: 'O mne',
     navProjects: 'Projekty',
     navContact: 'Kontakt',
-    portfolioTitle: "Peter's Portfolio",
+    portfolioTitle: "Peter Šefčík Portfolio",
     
     // Hero
-    heroTitle: 'Ahoj, som Peter',
+    heroTitle: 'Ahoj, ja som Peter',
     heroSubtitle: 'Nadšený vývojár tvoríaci krásne a funkčné webové zážitky',
     heroViewWork: 'Pozri moju prácu',
     heroGetInTouch: 'Kontaktuj ma',
@@ -30,6 +30,10 @@ const translations = {
     aboutText1: 'Som oddaný vývojár s vášňou pre vytváranie moderných, responzívnych webových aplikácií. Milujem premena zložitých problémov na jednoduché, krásne a intuitívne riešenia.',
     aboutText2: 'Keď nepíšem kód, rád sa zoznamujem s najnovšími webovými technológiami a prispievam do open-source projektov. Verím v písanie čistého, udržateľného kódu a vždy sa snažím učiť a rásť.',
     aboutSkills: 'Zručnosti a technológie',
+    skillsFrontend: 'Frontend Development',
+    skillsBackend: 'Backend Development',
+    skillsDesign: 'Design',
+    skillsOS: 'Operating Systems',
     
     // Projects
     projectsTitle: 'Moje projekty',
@@ -38,17 +42,17 @@ const translations = {
     projectTechnologiesUsed: 'Použité technológie',
     projectViewLive: 'Zobraziť naživo',
     projectViewCode: 'Zobraziť kód',
+    projectInProgress: 'V príprave',
+    
+    // Print Materials
+    printMaterialsTitle: 'Tlačoviny',
+    printMaterialsSubtitle: 'Grafické návrhy vizitiek, logotypov a tlačovín. Kliknite na obrázok pre zobrazenie v plnej veľkosti.',
     
     // Contact
     contactTitle: 'Kontaktujte ma',
     contactSubtitle: 'Vždy som otvorený diskusii o nových projektoch, kreatívnych nápadoch alebo príležítostiach byť súčasťou vašich vízií.',
-    contactName: 'Meno',
     contactEmail: 'Email',
-    contactMessage: 'Správa',
-    contactNamePlaceholder: 'Vaše meno',
-    contactEmailPlaceholder: 'vas.email@priklad.sk',
-    contactMessagePlaceholder: 'Vaša správa',
-    contactSend: 'Odoslať správu',
+    contactPhone: 'Telefón',
     
     // Footer
     footerDescription: 'Tvorba moderných, responzívnych webových zážitkov s vášňou a presnosťou.',
@@ -62,7 +66,7 @@ const translations = {
     navAbout: 'About',
     navProjects: 'Projects',
     navContact: 'Contact',
-    portfolioTitle: "Peter's Portfolio",
+    portfolioTitle: "Peter Šefčík Portfolio",
     
     // Hero
     heroTitle: "Hi, I'm Peter",
@@ -75,6 +79,10 @@ const translations = {
     aboutText1: "I'm a dedicated developer with a passion for creating modern, responsive web applications. I love turning complex problems into simple, beautiful, and intuitive solutions.",
     aboutText2: "When I'm not coding, I enjoy staying up-to-date with the latest web technologies and contributing to open-source projects. I believe in writing clean, maintainable code and always strive to learn and grow.",
     aboutSkills: 'Skills & Technologies',
+    skillsFrontend: 'Frontend Development',
+    skillsBackend: 'Backend Development',
+    skillsDesign: 'Design',
+    skillsOS: 'Operating Systems',
     
     // Projects
     projectsTitle: 'My Projects',
@@ -83,17 +91,17 @@ const translations = {
     projectTechnologiesUsed: 'Technologies Used',
     projectViewLive: 'View Live',
     projectViewCode: 'View Code',
+    projectInProgress: 'In Progress',
+    
+    // Print Materials
+    printMaterialsTitle: 'Print Materials',
+    printMaterialsSubtitle: 'Graphic designs for business cards, logos, and print materials. Click on an image to view it in full size.',
     
     // Contact
     contactTitle: 'Get In Touch',
     contactSubtitle: "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.",
-    contactName: 'Name',
     contactEmail: 'Email',
-    contactMessage: 'Message',
-    contactNamePlaceholder: 'Your Name',
-    contactEmailPlaceholder: 'your.email@example.com',
-    contactMessagePlaceholder: 'Your Message',
-    contactSend: 'Send Message',
+    contactPhone: 'Phone',
     
     // Footer
     footerDescription: 'Creating modern, responsive web experiences with passion and precision.',
@@ -159,55 +167,18 @@ export const getProjects = (lang: Language) => {
         liveUrl: 'https://www.nextlayerstudio.mark',
       },
       {
-        id: 6,
-        title: 'Aplikácia pre správu úloh',
-        description: 'Kolaboratívna aplikácia pre správu úloh s aktualizáciami v reálnom čase.',
-        longDescription: 'Funkčná aplikácia pre správu úloh, ktorá umožňuje tímom efektívne spolupracovať. Obsahuje funkciu drag-and-drop, aktualizácie v reálnom čase pomocou WebSockets, tímové pracovné priestory, priradenie úloh a sledovanie pokroku. UI je intuitívne a navrhnuté pre produktivitu.',
-        technologies: ['React', 'TypeScript', 'Socket.io', 'Express', 'PostgreSQL', 'Tailwind CSS'],
-        imageUrl: '/project2.jpg',
-        githubUrl: 'https://github.com',
-        liveUrl: 'https://example.com',
+        id: 11,
+        title: 'Michal Kurka',
+        description: 'Moderná webstránka pre finančného poradcu s profesionálnym dizajnom, intuitívnym používateľským rozhraním a efektívnou prezentáciou služieb.',
+        longDescription: 'Profesionálna webstránka pre finančného poradcu Michala Kurku poskytujúcu komplexné finančné služby. Moderný, responzívny dizajn s dôrazom na dôveru a profesionalitu. Webstránka efektívne prezentuje služby investovania, hypoték, poistení a dôchodkových produktov, pričom poskytuje jednoduchý kontaktný formulár a jasnú navigáciu pre klientov.',
+        technologies: ['React', 'TypeScript', 'Tailwind CSS'],
+        imageUrl: '/Michal Kurka.JPG',
+        githubUrl: '',
+        liveUrl: 'https://financny-poradca.vercel.app/domov',
+        inProgress: true,
       },
-      {
-        id: 7,
-        title: 'Počasie Dashboard',
-        description: 'Krásny weather dashboard s predpoveďami na základe polohy a interaktívnymi mapami.',
-        longDescription: 'Elegantný weather dashboard, ktorý poskytuje detailné informácie o počasí pre akúkoľvek polohu. Funkcie zahŕňajú 7-dňovú predpoveď, hodinové aktualizácie počasia, interaktívne mapy, upozornenia na počasie a krásne vizualizácie údajov. Aplikácia používa moderné API a poskytuje plynulý používateľský zážitok.',
-        technologies: ['React', 'TypeScript', 'Chart.js', 'Weather API', 'Tailwind CSS'],
-        imageUrl: '/project3.jpg',
-        githubUrl: 'https://github.com',
-        liveUrl: 'https://example.com',
-      },
-      {
-        id: 8,
-        title: 'Analytika sociálnych médií',
-        description: 'Analytická platforma na sledovanie výkonnosti sociálnych médií a metrík zapojenia.',
-        longDescription: 'Výkonná analytická platforma, ktorá pomáha firmám sledovať ich výkonnosť na sociálnych médiách naprieč viacerými platformami. Poskytuje detailné prehľady, metriky zapojenia, demografiku publika, analýzu výkonnosti obsahu a prispôsobiteľné správy. Dashboard je navrhnutý pre rozhodovanie založené na údajoch.',
-        technologies: ['React', 'TypeScript', 'D3.js', 'Node.js', 'Redis', 'Tailwind CSS'],
-        imageUrl: '/project4.jpg',
-        githubUrl: 'https://github.com',
-        liveUrl: 'https://example.com',
-      },
-      {
-        id: 9,
-        title: 'Portfólio webstránka',
-        description: 'Moderná, responzívna portfólio webstránka predstavujúca projekty a zručnosti.',
-        longDescription: 'Táto portfólio webstránka! Postavená na Reacte, TypeScripte a Tailwind CSS, má moderný dizajn, plynulé animácie a responzívne rozloženie, ktoré perfektne funguje na všetkých zariadeniach. Showcase projektov obsahuje interaktívne popup karty s detailnými informáciami o projektoch.',
-        technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-        imageUrl: '/project5.jpg',
-        githubUrl: 'https://github.com',
-        liveUrl: 'https://example.com',
-      },
-      {
-        id: 10,
-        title: 'Finančný tracker',
-        description: 'Aplikácia na sledovanie osobných financií s plánovaním rozpočtu a analýzou výdavkov.',
-        longDescription: 'Komplexný tracker osobných financií, ktorý pomáha používateľom efektívne spravovať svoje peniaze. Funkcie zahŕňajú sledovanie výdavkov, vytváranie a monitorovanie rozpočtu, nastavenie finančných cieľov, kategorizáciu transakcií a detailnú analýzu s grafmi a diagramami. Aplikácia poskytuje prehľady o výdavkových vzorcoch a pomáha používateľom dosiahnuť ich finančné ciele.',
-        technologies: ['React', 'TypeScript', 'Firebase', 'Chart.js', 'Tailwind CSS'],
-        imageUrl: '/project6.jpg',
-        githubUrl: 'https://github.com',
-        liveUrl: 'https://example.com',
-      },
+      
+
     ],
     en: [
       {
@@ -261,55 +232,18 @@ export const getProjects = (lang: Language) => {
         liveUrl: 'https://www.nextlayerstudio.mark',
       },
       {
-        id: 6,
-        title: 'Task Management App',
-        description: 'A collaborative task management application with real-time updates.',
-        longDescription: 'A feature-rich task management application that enables teams to collaborate effectively. It includes drag-and-drop functionality, real-time updates using WebSockets, team workspaces, task assignments, and progress tracking. The UI is intuitive and designed for productivity.',
-        technologies: ['React', 'TypeScript', 'Socket.io', 'Express', 'PostgreSQL', 'Tailwind CSS'],
-        imageUrl: '/project2.jpg',
-        githubUrl: 'https://github.com',
-        liveUrl: 'https://example.com',
+        id: 11,
+        title: 'Michal Kurka',
+        description: 'Modern website for a financial advisor with professional design, intuitive user interface, and effective service presentation.',
+        longDescription: 'Professional website for financial advisor Michal Kurka providing comprehensive financial services. Modern, responsive design emphasizing trust and professionalism. The website effectively presents investment, mortgage, insurance, and pension products, while providing a simple contact form and clear navigation for clients.',
+        technologies: ['React', 'TypeScript', 'Tailwind CSS'],
+        imageUrl: '/Michal Kurka.JPG',
+        githubUrl: '',
+        liveUrl: 'https://financny-poradca.vercel.app/domov',
+        inProgress: true,
       },
-      {
-        id: 7,
-        title: 'Weather Dashboard',
-        description: 'Beautiful weather dashboard with location-based forecasts and interactive maps.',
-        longDescription: 'An elegant weather dashboard that provides detailed weather information for any location. Features include 7-day forecasts, hourly weather updates, interactive maps, weather alerts, and beautiful data visualizations. The app uses modern APIs and provides a smooth user experience.',
-        technologies: ['React', 'TypeScript', 'Chart.js', 'Weather API', 'Tailwind CSS'],
-        imageUrl: '/project3.jpg',
-        githubUrl: 'https://github.com',
-        liveUrl: 'https://example.com',
-      },
-      {
-        id: 8,
-        title: 'Social Media Analytics',
-        description: 'Analytics platform for tracking social media performance and engagement metrics.',
-        longDescription: 'A powerful analytics platform that helps businesses track their social media performance across multiple platforms. It provides detailed insights, engagement metrics, audience demographics, content performance analysis, and customizable reports. The dashboard is designed for data-driven decision making.',
-        technologies: ['React', 'TypeScript', 'D3.js', 'Node.js', 'Redis', 'Tailwind CSS'],
-        imageUrl: '/project4.jpg',
-        githubUrl: 'https://github.com',
-        liveUrl: 'https://example.com',
-      },
-      {
-        id: 9,
-        title: 'Portfolio Website',
-        description: 'A modern, responsive portfolio website showcasing projects and skills.',
-        longDescription: 'This very portfolio website! Built with React, TypeScript, and Tailwind CSS, it features a modern design, smooth animations, and a responsive layout that works perfectly on all devices. The project showcase includes interactive popup cards for detailed project information.',
-        technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-        imageUrl: '/project5.jpg',
-        githubUrl: 'https://github.com',
-        liveUrl: 'https://example.com',
-      },
-      {
-        id: 10,
-        title: 'Finance Tracker',
-        description: 'Personal finance tracking application with budget planning and expense analytics.',
-        longDescription: 'A comprehensive personal finance tracker that helps users manage their money effectively. Features include expense tracking, budget creation and monitoring, financial goal setting, transaction categorization, and detailed analytics with charts and graphs. The app provides insights into spending patterns and helps users achieve their financial goals.',
-        technologies: ['React', 'TypeScript', 'Firebase', 'Chart.js', 'Tailwind CSS'],
-        imageUrl: '/project6.jpg',
-        githubUrl: 'https://github.com',
-        liveUrl: 'https://example.com',
-      },
+      
+
     ],
   };
   return projects[lang];
